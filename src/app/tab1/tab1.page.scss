@@ -1,0 +1,8 @@
+ion-content ion-toolbar {
+  --background: translucent;
+}
+div { position:fixed; width:50%; height:50% }
+#NW { top:0;   left:0;   background:orange  }
+#NE { top:0;   left:50%; background:blue    }
+#SW { top:50%; left:0;   background:green   }
+#SE { top:50%; left:50%; background:red     }   
