@@ -31,26 +31,38 @@
 <ion-col size="12" class="ion-text-center">
 
 <ion-button fill="clear" (click)="prev()" color="light">
-  <ion-icon name="skip-forward"></ion-icon>
+  <ion-icon name="arrow-back" color="light"></ion-icon>
 </ion-button>
 
 <ion-button fill="clear" (click)="togglePlayer(false)" *ngIf="!isPlaying" color="light">
-  <ion-icon slot="icon-only" name="play" color="black">
+  <ion-icon slot="icon-only" name="play" color="light">
   </ion-icon>
 </ion-button>
 
-<ion-button fill="clear" (click)="togglePlayer(true)" *ngIf="!isPlaying" color="light">
-  <ion-icon slot="icon-only" name="pause">
+<ion-button fill="clear" (click)="togglePlayer(true)"  *ngIf="isPlaying" color="light">
+  <ion-icon slot="icon-only" name="stop" color="light">
   </ion-icon>
 </ion-button>
 
 <ion-button fill="clear" (click)="next()" color="light">
-  <ion-icon slot="icon-only" name="skip-backward"  >
+  <ion-icon slot="icon-only" name="arrow-forward"  color="light">
   </ion-icon>
 </ion-button>
 
+
+ <!--
+ 
+<ion-icon name="arrow-back"></ion-icon>
+
+
+  <ion-icon name="stop"></ion-icon>
+
+  <ion-icon name="arrow-forward"></ion-icon>
+
+  -->
 </ion-col>
 
 </ion-row>
 </ion-toolbar>
+<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
 </ion-footer> 
