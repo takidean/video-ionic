@@ -92,11 +92,8 @@ export class Tab2Page implements AfterViewInit, OnDestroy, ViewDidEnter {
       this.reload();
     }
     else{
-
     this.foodEatenSubscription = this.game.foodEaten.subscribe(_ => this.score += 10);
-
     this.score = 0;    
-    
     const isMobile = this.platform.is('android') || this.platform.is('ios');
     this.info = isMobile ? "Touchez " : "Touchez un boutton";
     this.controlInfo = isMobile ? 
