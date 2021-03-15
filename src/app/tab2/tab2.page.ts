@@ -45,8 +45,9 @@ export class Tab2Page implements AfterViewInit, OnDestroy, ViewDidEnter {
 
   constructor(private ngZone: NgZone, private renderer: Renderer2, private platform: Platform) {}
   
+    
   public ngAfterViewInit(): void {
-    this.renderer.listen(this.map.nativeElement, "touchstart", (ev: TouchEvent) => {
+     this.renderer.listen(this.map.nativeElement, "touchstart", (ev: TouchEvent) => {
       ev.stopPropagation();
       console.log('touchstart');
       if (this.gameState === GameState.Started) {
@@ -61,38 +62,50 @@ export class Tab2Page implements AfterViewInit, OnDestroy, ViewDidEnter {
     });
   }
 
+  reload(){
+    window.location.reload();
+  }
   public ionViewDidEnter(): void {
-    this.canvasPanelHeight = this.content.nativeElement.offsetHeight - this.grid.nativeElement.offsetHeight;
 
+    this.canvasPanelHeight = this.content.nativeElement.offsetHeight - this.grid.nativeElement.offsetHeight;
+    
     this.mapWidth = Math.floor(this.content.nativeElement.offsetWidth / SegmentSize) * SegmentSize;
     this.mapHeight = Math.floor(this.canvasPanelHeight / SegmentSize) * SegmentSize;
 
     const context = this.canvas.nativeElement.getContext("2d");   
 
     this.game = new Game(this.mapWidth, this.mapHeight, context, this.ngZone);
-    this.gameStateSubscription = this.game.gameStateChanged.subscribe((state: GameState) => {
+      this.gameStateSubscription = this.game.gameStateChanged.subscribe((state: GameState) => {
       this.gameState = state;
 
       if (state === GameState.Stopped) {
         this.info = 'Game Over :(';
         this.infoVisible = true;
       } else {
-        this.score = 0;
+         this.score = 0;
         this.infoVisible = false;
         this.movementsInfoVisible = false;
       }
     });
 
+    if(this.movementsInfoVisible===false){
+      this.reload();
+    }
+    else{
+
     this.foodEatenSubscription = this.game.foodEaten.subscribe(_ => this.score += 10);
 
     this.score = 0;    
+    
     const isMobile = this.platform.is('android') || this.platform.is('ios');
-    this.info = isMobile ? "Tap to start" : "Press space to start";
+    this.info = isMobile ? "Touchez " : "Touchez un boutton";
     this.controlInfo = isMobile ? 
-      "Tap the left side of the screen to turn left or the right side of the screen to turn right" : 
-      "Use the arrow keys to change snake direction";
+      "Appuyez sur le côté gauche de l'écran pour tourner à gauche ou sur le côté droit de l'écran pour tourner à droite" : 
+      "Utilisez les touches fléchées pour changer la direction du serpent";
     this.infoVisible = true;
   }
+  }
+
 
   public ngOnDestroy(): void {
     this.game.stop();

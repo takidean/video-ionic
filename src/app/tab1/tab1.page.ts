@@ -23,7 +23,7 @@ export class Tab1Page {
   async viewVideoMusc() {
     const modal = await this.modalCtrl.create({
       component: ViewVideoPage,
-      componentProps: { url: 'https://www.youtube.com/embed/zewyvQEqsS4?autoplay=1&cc_load_policy=1' },
+      componentProps: { url: 'https://www.youtube.com/embed/ngTOxqeLCpI?autoplay=1&cc_load_policy=1' },
       cssClass: 'viewVideoModal'
     })
     return modal.present();
@@ -40,7 +40,7 @@ export class Tab1Page {
   async viewVideoGame() {
     const modal = await this.modalCtrl.create({
       component: ViewVideoPage,
-      componentProps: { url: 'https://www.youtube.com/embed/tS8nzAQg_8k?autoplay=1&cc_load_policy=1' },
+      componentProps: { url: 'https://www.youtube.com/embed/7xMKF0idLHw?autoplay=1&cc_load_policy=1' },
       cssClass: 'viewVideoModal'
     })
     return modal.present();

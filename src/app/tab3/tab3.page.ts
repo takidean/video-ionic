@@ -17,6 +17,42 @@ export class Tab3Page  {
     {
       name: 'Ben Ten',
       path: './assets/mp3/ben-ten.mp3'
+    },
+    {
+      name: 'la danse des dinausaurs',
+      path: './assets/mp3/la-danse-des-dinosaures-gipsy-bebe-requin-comptine-par-little-angel-francais.mp3'
+    },
+    {
+      name: 'bouboukalakala',
+      path: './assets/mp3/bouboukalakala-comptine-dafrique-pour-les-petits-avec-paroles.mp3'
+    },
+    {
+      name: 'ah les crocodiles',
+      path: './assets/mp3/ah-les-crocodiles.mp3'
+    },
+    {
+      name: 'pirouette cacahuete il etait un petit homme',
+      path: './assets/mp3/pirouette-cacahuete-il-etait-un-petit-homme.mp3'
+    },
+    {
+      name: 'promenons nous dans les bois',
+      path: './assets/mp3/promenons-nous-dans-les-bois.mp3'
+    },
+    {
+      name: 'ilona un monde arfait',
+      path: './assets/mp3/ilona-un-monde-parfait.mp3'
+    },
+    {
+      name: 'un elephant qui se balancait',
+      path: './assets/mp3/un-elephant-qui-se-balancait.mp3'
+    },
+    {
+      name: 'le poussin piou',
+      path: './assets/mp3/le-poussin-piou.mp3'
+    },
+    {
+      name: 'rene la taupe mignon mignon',
+      path: './assets/mp3/rene-la-taupe-mignon-mignon-clip-officiel.mp3'
     }
   ];
 
